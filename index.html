@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Rwanda GPA Calculator - Free Student Grade Calculator | Calculate Your GPA</title>
+    <meta name="description" content="Free Rwanda GPA Calculator for students. Calculate your GPA with multiple subjects, credit units, and get instant results. Mobile-friendly and easy to use.">
+    <meta name="keywords" content="Rwanda GPA Calculator, Student GPA calculator, Grade calculator, GPA calculator Rwanda, University GPA, College GPA, Academic calculator, Student tools">
+    <meta name="author" content="Rwanda GPA Calculator">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Rwanda GPA Calculator - Free Student Grade Calculator">
+    <meta property="og:description" content="Calculate your GPA instantly with our free, easy-to-use Rwanda GPA Calculator. Perfect for students and academic planning.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rwanda GPA Calculator - Free Student Grade Calculator">
+    <meta name="twitter:description" content="Calculate your GPA instantly with our free, easy-to-use Rwanda GPA Calculator.">
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Ad Space Placeholder */
+        .ad-space {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            height: 250px;
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .ad-space::before {
+            content: "Ad Space";
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .calculator-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .sidebar {
+            background: #e3f2fd;
+            border-radius: 15px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        /* Instructions */
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .instructions h2 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            color: #856404;
+        }
+
+        .instructions li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Subject Input Form */
+        .subject-form {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr auto;
+            gap: 15px;
+            align-items: end;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(86, 171, 47, 0.3);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(86, 171, 47, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.3);
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 65, 108, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        /* Subject List */
+        .subjects-list {
+            margin-bottom: 30px;
+        }
+
+        .subject-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 0.3s ease;
+        }
+
+        .subject-info {
+            flex: 1;
+        }
+
+        .subject-name {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+
+        .subject-details {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .subject-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Results Section */
+        .results {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .results.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .gpa-display {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .motivational-message {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .calculation-details {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Sidebar Content */
+        .sidebar h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .grade-scale {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .grade-scale h4 {
+            color: #495057;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .grade-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .grade-item:last-child {
+            border-bottom: none;
+        }
+
+        .grade-range {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .grade-letter {
+            color: #6c757d;
+        }
+
+        /* Error Messages */
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        /* Success Messages */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .ad-space {
+                position: static;
+                width: 100%;
+                height: 100px;
+                margin-bottom: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .subject-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .subject-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .gpa-display {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .calculator-section {
+                padding: 20px;
+            }
+
+            .gpa-display {
+                font-size: 2rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+            
+            .ad-space {
+                display: none;
+            }
+            
+            .btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section with Ad Space -->
+        <header class="header">
+            <h1>🇷🇼 Rwanda GPA Calculator</h1>
+            <p>Calculate your GPA instantly with our free, easy-to-use calculator</p>
+            
+            <!-- Ad Space Placeholder -->
+            <div class="ad-space">
+                <!-- Ad content will be placed here -->
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Calculator Section -->
+            <section class="calculator-section">
+                <!-- Instructions -->
+                <div class="instructions">
+                    <h2>How to Use the GPA Calculator</h2>
+                    <ul>
+                        <li>Enter your subject name (e.g., Mathematics, Physics)</li>
+                        <li>Input your score (0-100)</li>
+                        <li>Add credit units if available (optional)</li>
+                        <li>Click "Add Subject" to include it in your calculation</li>
+                        <li>Click "Calculate GPA" when you're ready</li>
+                    </ul>
+                </div>
+
+                <!-- Error/Success Messages -->
+                <div id="errorMessage" class="error-message"></div>
+                <div id="successMessage" class="success-message"></div>
+
+                <!-- Subject Input Form -->
+                <form id="subjectForm" class="subject-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="subjectName">Subject Name *</label>
+                            <input type="text" id="subjectName" placeholder="e.g., Mathematics" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="score">Score (0-100) *</label>
+                            <input type="number" id="score" min="0" max="100" placeholder="85" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="credits">Credit Units</label>
+                            <input type="number" id="credits" min="1" step="0.5" placeholder="3">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Subject</button>
+                    </div>
+                </form>
+
+                <!-- Subjects List -->
+                <div class="subjects-list" id="subjectsList">
+                    <!-- Subjects will be dynamically added here -->
+                </div>
+
+                <!-- Action Buttons -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <button id="calculateBtn" class="btn btn-success" style="margin-right: 15px;">Calculate GPA</button>
+                    <button id="resetBtn" class="btn btn-secondary">Reset All</button>
+                </div>
+
+                <!-- Results Section -->
+                <div id="results" class="results">
+                    <h3>Your GPA Result</h3>
+                    <div id="gpaDisplay" class="gpa-display">0.00</div>
+                    <div id="motivationalMessage" class="motivational-message"></div>
+                    <div id="calculationDetails" class="calculation-details">
+                        <!-- Calculation details will be shown here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <h3>Grade Scale Reference</h3>
+                <div class="grade-scale">
+                    <h4>Rwanda University Grading</h4>
+                    <div class="grade-item">
+                        <span class="grade-range">90-100</span>
+                        <span class="grade-letter">A+ (4.0)</span>
+                    </div>
+                    <div class="grade-item">
+                        <span class="grade-range">85-89</span>
+                        <span class="grade-letter">A (3.7)</span>
+                    </div>
+                    <div class="grade-item">
+                        <span class="grade-range">80-84</span>
+                        <span class="grade-letter">A- (3.3)</span>
+                    </div>
+                    <div class="grade-item">
+                        <span class="grade-range">75-79</span>
+                        <span class="grade-letter">B+ (3.0)</span>
+                    </div>
+                    <div class="grade-item">
+                        <span class="grade-range">70-74</span>
+                        <span class="grade-letter">B (2.7)</span>
+                    </div>
+                    <div class="grade-item">
+                        <span class="grade-range">65-69</span>
+                        <span class="grade-letter">B- (2.3)</span>
+                    </div>
+                    <div class="grade-item">
+                        <span class="grade-range">60-64</span>
+                        <span class="grade-letter">C+ (2.0)</span>
+                    </div>
+                    <div class="grade-item">
+                        <span class="grade-range">55-59</span>
+                        <span class="grade-letter">C (1.7)</span>
+                    </div>
+                    <div class="grade-item">
+                        <span class="grade-range">50-54</span>
+                        <span class="grade-letter">C- (1.3)</span>
+                    </div>
+                    <div class="grade-item">
+                        <span class="grade-range">0-49</span>
+                        <span class="grade-letter">F (0.0)</span>
+                    </div>
+                </div>
+
+                <div class="grade-scale">
+                    <h4>Tips for Success</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #4facfe;">📚</span>
+                            Regular study sessions
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #4facfe;">🎯</span>
+                            Set clear goals
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #4facfe;">⏰</span>
+                            Manage your time well
+                        </li>
+                        <li style="margin-bottom: 10px; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #4facfe;">🤝</span>
+                            Ask for help when needed
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script>
+        // Global variables for managing subjects and calculations
+        let subjects = [];
+        let subjectIdCounter = 0;
+
+        // DOM elements
+        const subjectForm = document.getElementById('subjectForm');
+        const subjectsList = document.getElementById('subjectsList');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const results = document.getElementById('results');
+        const gpaDisplay = document.getElementById('gpaDisplay');
+        const motivationalMessage = document.getElementById('motivationalMessage');
+        const calculationDetails = document.getElementById('calculationDetails');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+
+        // Grade to GPA conversion function
+        function scoreToGPA(score) {
+            if (score >= 90) return 4.0;
+            if (score >= 85) return 3.7;
+            if (score >= 80) return 3.3;
+            if (score >= 75) return 3.0;
+            if (score >= 70) return 2.7;
+            if (score >= 65) return 2.3;
+            if (score >= 60) return 2.0;
+            if (score >= 55) return 1.7;
+            if (score >= 50) return 1.3;
+            return 0.0;
+        }
+
+        // Get letter grade from score
+        function scoreToLetterGrade(score) {
+            if (score >= 90) return 'A+';
+            if (score >= 85) return 'A';
+            if (score >= 80) return 'A-';
+            if (score >= 75) return 'B+';
+            if (score >= 70) return 'B';
+            if (score >= 65) return 'B-';
+            if (score >= 60) return 'C+';
+            if (score >= 55) return 'C';
+            if (score >= 50) return 'C-';
+            return 'F';
+        }
+
+        // Show error message
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show');
+            successMessage.classList.remove('show');
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        // Show success message
+        function showSuccess(message) {
+            successMessage.textContent = message;
+            successMessage.classList.add('show');
+            errorMessage.classList.remove('show');
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 3000);
+        }
+
+        // Validate input data
+        function validateInput(subjectName, score, credits) {
+            if (!subjectName.trim()) {
+                showError('Please enter a subject name.');
+                return false;
+            }
+
+            if (isNaN(score) || score < 0 || score > 100) {
+                showError('Score must be a number between 0 and 100.');
+                return false;
+            }
+
+            if (credits && (isNaN(credits) || credits <= 0)) {
+                showError('Credit units must be a positive number.');
+                return false;
+            }
+
+            return true;
+        }
+
+        // Add subject to the list
+        function addSubject(subjectName, score, credits) {
+            const subject = {
+                id: subjectIdCounter++,
+                name: subjectName.trim(),
+                score: parseFloat(score),
+                credits: credits ? parseFloat(credits) : null,
+                gpa: scoreToGPA(parseFloat(score)),
+                letterGrade: scoreToLetterGrade(parseFloat(score))
+            };
+
+            subjects.push(subject);
+            renderSubjectsList();
+            showSuccess(`Added ${subject.name} successfully!`);
+        }
+
+        // Remove subject from the list
+        function removeSubject(id) {
+            const subjectIndex = subjects.findIndex(subject => subject.id === id);
+            if (subjectIndex !== -1) {
+                const removedSubject = subjects.splice(subjectIndex, 1)[0];
+                renderSubjectsList();
+                showSuccess(`Removed ${removedSubject.name} from the list.`);
+            }
+        }
+
+        // Render the subjects list
+        function renderSubjectsList() {
+            if (subjects.length === 0) {
+                subjectsList.innerHTML = '<p style="text-align: center; color: #6c757d; padding: 20px;">No subjects added yet. Add your first subject above!</p>';
+                calculateBtn.disabled = true;
+                calculateBtn.style.opacity = '0.6';
+                return;
+            }
+
+            calculateBtn.disabled = false;
+            calculateBtn.style.opacity = '1';
+
+            subjectsList.innerHTML = subjects.map(subject => `
+                <div class="subject-item">
+                    <div class="subject-info">
+                        <div class="subject-name">${subject.name}</div>
+                        <div class="subject-details">
+                            Score: ${subject.score}% | Grade: ${subject.letterGrade} (${subject.gpa.toFixed(2)})
+                            ${subject.credits ? ` | Credits: ${subject.credits}` : ''}
+                        </div>
+                    </div>
+                    <div class="subject-actions">
+                        <button onclick="removeSubject(${subject.id})" class="btn btn-danger" style="padding: 8px 15px; font-size: 0.9rem;">Remove</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Calculate GPA
+        function calculateGPA() {
+            if (subjects.length === 0) {
+                showError('Please add at least one subject before calculating GPA.');
+                return;
+            }
+
+            let totalPoints = 0;
+            let totalCredits = 0;
+            let hasCredits = false;
+
+            // Check if any subject has credits
+            subjects.forEach(subject => {
+                if (subject.credits) {
+                    hasCredits = true;
+                }
+            });
+
+            if (hasCredits) {
+                // Weighted GPA calculation
+                subjects.forEach(subject => {
+                    const credits = subject.credits || 1; // Default to 1 credit if not specified
+                    totalPoints += subject.gpa * credits;
+                    totalCredits += credits;
+                });
+            } else {
+                // Simple average calculation
+                subjects.forEach(subject => {
+                    totalPoints += subject.gpa;
+                    totalCredits += 1;
+                });
+            }
+
+            const gpa = totalCredits > 0 ? totalPoints / totalCredits : 0;
+            const roundedGPA = Math.round(gpa * 100) / 100;
+
+            // Display results
+            gpaDisplay.textContent = roundedGPA.toFixed(2);
+            
+            // Generate motivational message
+            let message = '';
+            if (roundedGPA >= 3.7) {
+                message = 'Outstanding! You\'re doing exceptionally well! 🌟';
+            } else if (roundedGPA >= 3.3) {
+                message = 'Excellent work! Keep up the great performance! 🎉';
+            } else if (roundedGPA >= 3.0) {
+                message = 'Great job! You\'re on the right track! 👍';
+            } else if (roundedGPA >= 2.7) {
+                message = 'Good work! There\'s room for improvement! 💪';
+            } else if (roundedGPA >= 2.0) {
+                message = 'Keep working hard! You can do better! 📚';
+            } else {
+                message = 'Don\'t give up! Focus on your studies and seek help! 🤝';
+            }
+            
+            motivationalMessage.textContent = message;
+
+            // Show calculation details
+            const calculationType = hasCredits ? 'Weighted GPA (with credit units)' : 'Simple Average GPA';
+            const details = `
+                <strong>Calculation Type:</strong> ${calculationType}<br>
+                <strong>Total Subjects:</strong> ${subjects.length}<br>
+                ${hasCredits ? `<strong>Total Credits:</strong> ${totalCredits}<br>` : ''}
+                <strong>GPA Scale:</strong> 0.0 - 4.0
+            `;
+            calculationDetails.innerHTML = details;
+
+            // Show results with animation
+            results.classList.add('show');
+            results.scrollIntoView({ behavior: 'smooth' });
+
+            showSuccess('GPA calculated successfully!');
+        }
+
+        // Reset all data
+        function resetAll() {
+            subjects = [];
+            subjectIdCounter = 0;
+            renderSubjectsList();
+            results.classList.remove('show');
+            subjectForm.reset();
+            errorMessage.classList.remove('show');
+            successMessage.classList.remove('show');
+            showSuccess('All data has been reset successfully!');
+        }
+
+        // Event listeners
+        subjectForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const subjectName = document.getElementById('subjectName').value;
+            const score = document.getElementById('score').value;
+            const credits = document.getElementById('credits').value;
+
+            if (validateInput(subjectName, score, credits)) {
+                addSubject(subjectName, score, credits);
+                subjectForm.reset();
+            }
+        });
+
+        calculateBtn.addEventListener('click', calculateGPA);
+        resetBtn.addEventListener('click', resetAll);
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderSubjectsList();
+            
+            // Add some sample data for demonstration (optional)
+            // Uncomment the lines below to add sample subjects
+            /*
+            addSubject('Mathematics', 85, 3);
+            addSubject('Physics', 78, 3);
+            addSubject('Chemistry', 92, 2);
+            */
+        });
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+Enter to calculate GPA
+            if (e.ctrlKey && e.key === 'Enter') {
+                calculateGPA();
+            }
+            // Ctrl+R to reset (prevent default browser refresh)
+            if (e.ctrlKey && e.key === 'r') {
+                e.preventDefault();
+                resetAll();
+            }
+        });
+
+        // Add form validation on input
+        document.getElementById('score').addEventListener('input', function(e) {
+            const value = parseFloat(e.target.value);
+            if (value > 100) {
+                e.target.value = 100;
+            } else if (value < 0) {
+                e.target.value = 0;
+            }
+        });
+
+        document.getElementById('credits').addEventListener('input', function(e) {
+            const value = parseFloat(e.target.value);
+            if (value < 0) {
+                e.target.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
