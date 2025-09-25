@@ -71,6 +71,18 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7005113449591260"
          crossorigin="anonymous"></script>
     
+    <!-- AdSense Test Mode Script -->
+    <script>
+        // Enable test mode for local development
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.search.includes('googfc')) {
+            window.adsbygoogle = window.adsbygoogle || [];
+            window.adsbygoogle.push({
+                google_ad_client: "ca-pub-7005113449591260",
+                enable_page_level_ads: true
+            });
+        }
+    </script>
+    
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -577,6 +589,25 @@
         .ad-space::before {
             content: "Ad Space";
             font-weight: bold;
+        }
+
+        /* Local development ad styling */
+        .ad-space ins {
+            min-height: 90px;
+            display: block;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+        }
+
+        /* Test mode indicator for local development */
+        @media (max-width: 768px) {
+            .ad-space::before {
+                content: "Ad Space - Test Mode";
+                font-size: 0.7rem;
+                background: rgba(0, 0, 0, 0.3);
+                padding: 2px 6px;
+                border-radius: 4px;
+            }
         }
 
         /* Main Content */
@@ -1723,7 +1754,14 @@
             
             <!-- Ad Space Placeholder -->
             <div class="ad-space" aria-label="Advertisement space">
-                <!-- Ad content will be placed here -->
+                <!-- Google AdSense Header Ad -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-7005113449591260"
+                     data-ad-slot="5291067381"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </header>
 
@@ -1898,6 +1936,19 @@
                             <a href="blog/exam-preparation-strategies.html" style="color: var(--primary-color); text-decoration: none; font-size: 0.9rem;">📝 Exam Preparation</a>
                         </li>
                     </ul>
+                </div>
+
+                <!-- Google AdSense Sidebar Ad -->
+                <div class="ad-space" aria-label="Advertisement space">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7005113449591260"
+                         data-ad-slot="5622239872"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
                 </div>
 
                 <!-- Coming Soon Tools -->
@@ -2132,6 +2183,19 @@
 
         <!-- Footer Section -->
         <footer class="footer">
+            <!-- Google AdSense Footer Ad -->
+            <div class="ad-space" aria-label="Advertisement space">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7005113449591260"
+                     data-ad-slot="2101248527"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>ArseneLab.xyz</h3>
