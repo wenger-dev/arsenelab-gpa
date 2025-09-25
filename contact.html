@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Contact Us – ArseneLab.xyz | Get Help with Student Tools</title>
+    <meta name="description" content="Contact ArseneLab.xyz for support with our free student tools. Get help with GPA calculators, educational resources, and technical issues. We're here to help students succeed.">
+    <meta name="keywords" content="contact ArseneLab, student tools support, GPA calculator help, educational tools contact, student support">
+    <meta name="author" content="ArseneLab.xyz">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Us – ArseneLab.xyz">
+    <meta property="og:description" content="Contact ArseneLab.xyz for support with our free student tools. Get help with GPA calculators and educational resources.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .breadcrumb {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .breadcrumb a {
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .contact-form-section h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group .required {
+            color: #dc3545;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .btn-primary:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Error Messages */
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        /* Success Messages */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* Contact Info Section */
+        .contact-info-section {
+            background: #e3f2fd;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .contact-info-section h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .contact-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item h3 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item p {
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .contact-item a {
+            color: #4facfe;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-item .icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            color: #4facfe;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            grid-column: 1 / -1;
+        }
+
+        .faq-section h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #495057;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+
+        .faq-answer {
+            padding: 15px 20px;
+            color: #555;
+            display: none;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .faq-answer.show {
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 30px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #4facfe;
+        }
+
+        .footer-brand p {
+            color: #bdc3c7;
+            font-size: 1rem;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .footer-section h4 {
+            color: #ecf0f1;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #4facfe;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            text-align: center;
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer {
+                padding: 30px 20px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .header {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .main-content {
+                padding: 20px 15px;
+            }
+
+            .contact-form-section,
+            .contact-info-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>Contact Us</h1>
+            <p>Get Help with Our Student Tools</p>
+        </header>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a> > Contact Us
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Contact Form Section -->
+            <section class="contact-form-section">
+                <h2>Send us a Message</h2>
+                
+                <!-- Error/Success Messages -->
+                <div id="errorMessage" class="error-message"></div>
+                <div id="successMessage" class="success-message"></div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="e.g., GPA Calculator Issue">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" placeholder="Please describe your question or issue in detail..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        Send Message
+                    </button>
+                </form>
+            </section>
+
+            <!-- Contact Info Section -->
+            <section class="contact-info-section">
+                <h2>Get in Touch</h2>
+                
+                <div class="contact-item">
+                    <h3><span class="icon">📧</span>Email Support</h3>
+                    <p><strong>General Inquiries:</strong></p>
+                    <p><a href="mailto:support@arsenelab.xyz">support@arsenelab.xyz</a></p>
+                    <p><strong>Response Time:</strong> Within 24-48 hours</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3><span class="icon">🔧</span>Technical Support</h3>
+                    <p><strong>Technical Issues:</strong></p>
+                    <p><a href="mailto:tech@arsenelab.xyz">tech@arsenelab.xyz</a></p>
+                    <p><strong>Response Time:</strong> Within 12-24 hours</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3><span class="icon">⚖️</span>Legal & Privacy</h3>
+                    <p><strong>Privacy Concerns:</strong></p>
+                    <p><a href="mailto:privacy@arsenelab.xyz">privacy@arsenelab.xyz</a></p>
+                    <p><strong>Terms & Legal:</strong></p>
+                    <p><a href="mailto:legal@arsenelab.xyz">legal@arsenelab.xyz</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h3><span class="icon">⏰</span>Business Hours</h3>
+                    <p><strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM</p>
+                    <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                    <p><em>All times are in local timezone</em></p>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How accurate is the GPA calculator?
+                    </button>
+                    <div class="faq-answer">
+                        Our GPA calculator uses standard grading scales commonly used in educational institutions. However, different schools may use different scales or calculation methods. We recommend verifying results with your academic institution for official purposes.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Is my data stored when I use the calculator?
+                    </button>
+                    <div class="faq-answer">
+                        No, all calculations are performed locally in your browser. We do not store your academic data, grades, or calculation results on our servers. Your privacy is our priority.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I use this calculator for any educational institution?
+                    </button>
+                    <div class="faq-answer">
+                        Our calculator is designed to work with most standard grading systems. However, some institutions may have unique grading scales or calculation methods. Always check with your school's academic office for their specific requirements.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How do I report a bug or technical issue?
+                    </button>
+                    <div class="faq-answer">
+                        Please use our contact form above or email us at tech@arsenelab.xyz. Include details about the issue, your browser type, and any error messages you see. We'll investigate and fix the issue as soon as possible.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Are there any fees for using your tools?
+                    </button>
+                    <div class="faq-answer">
+                        No, all our tools are completely free to use. We believe in providing accessible educational resources for all students. Our website is supported by advertisements, but there are no hidden fees or premium features.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I suggest new features or tools?
+                    </button>
+                    <div class="faq-answer">
+                        Absolutely! We love hearing from students about what tools would be helpful. Please use our contact form to share your ideas. We consider all suggestions and may implement popular requests in future updates.
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>ArseneLab.xyz</h3>
+                    <p>Empowering students with free educational tools</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Tools</h4>
+                        <ul>
+                            <li><a href="index.html">GPA Calculator</a></li>
+                            <li><a href="#coming-soon">Grade Converter</a></li>
+                            <li><a href="#coming-soon">Study Planner</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#help">Help Center</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="terms-of-service.html">Terms of Service</a></li>
+                            <li><a href="#cookies">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ArseneLab.xyz. All rights reserved. | Made with ❤️ for students</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // DOM elements
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const errorMessage = document.getElementById('errorMessage');
+        const successMessage = document.getElementById('successMessage');
+
+        // Form validation function
+        function validateForm(formData) {
+            const errors = [];
+
+            // Validate name
+            if (!formData.name.trim()) {
+                errors.push('Name is required');
+            } else if (formData.name.trim().length < 2) {
+                errors.push('Name must be at least 2 characters long');
+            }
+
+            // Validate email
+            if (!formData.email.trim()) {
+                errors.push('Email is required');
+            } else if (!isValidEmail(formData.email)) {
+                errors.push('Please enter a valid email address');
+            }
+
+            // Validate message
+            if (!formData.message.trim()) {
+                errors.push('Message is required');
+            } else if (formData.message.trim().length < 10) {
+                errors.push('Message must be at least 10 characters long');
+            }
+
+            return errors;
+        }
+
+        // Email validation function
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Show error message
+        function showError(message) {
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show');
+            successMessage.classList.remove('show');
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        // Show success message
+        function showSuccess(message) {
+            successMessage.textContent = message;
+            successMessage.classList.add('show');
+            errorMessage.classList.remove('show');
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        }
+
+        // Handle form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Validate form
+            const errors = validateForm(formData);
+            
+            if (errors.length > 0) {
+                showError(errors.join('. '));
+                return;
+            }
+
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            // Simulate form submission (replace with actual form handling)
+            setTimeout(() => {
+                // Reset form
+                contactForm.reset();
+                
+                // Show success message
+                showSuccess('Thank you for your message! We\'ll get back to you within 24-48 hours.');
+                
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                
+                // In a real implementation, you would send the data to your server here
+                console.log('Form submitted:', formData);
+            }, 2000);
+        });
+
+        // FAQ toggle function
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isOpen = answer.classList.contains('show');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('show');
+            });
+            
+            // Toggle current item
+            if (!isOpen) {
+                answer.classList.add('show');
+            }
+        }
+
+        // Add input validation on blur
+        document.getElementById('name').addEventListener('blur', function() {
+            if (this.value.trim().length > 0 && this.value.trim().length < 2) {
+                this.style.borderColor = '#dc3545';
+            } else {
+                this.style.borderColor = '#e9ecef';
+            }
+        });
+
+        document.getElementById('email').addEventListener('blur', function() {
+            if (this.value.trim().length > 0 && !isValidEmail(this.value)) {
+                this.style.borderColor = '#dc3545';
+            } else {
+                this.style.borderColor = '#e9ecef';
+            }
+        });
+
+        document.getElementById('message').addEventListener('blur', function() {
+            if (this.value.trim().length > 0 && this.value.trim().length < 10) {
+                this.style.borderColor = '#dc3545';
+            } else {
+                this.style.borderColor = '#e9ecef';
+            }
+        });
+
+        // Add character counter for message
+        document.getElementById('message').addEventListener('input', function() {
+            const maxLength = 1000;
+            const currentLength = this.value.length;
+            
+            if (currentLength > maxLength) {
+                this.value = this.value.substring(0, maxLength);
+            }
+        });
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+Enter to submit form
+            if (e.ctrlKey && e.key === 'Enter') {
+                contactForm.dispatchEvent(new Event('submit'));
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Focus on first input
+            document.getElementById('name').focus();
+            
+            // Add smooth scrolling for FAQ
+            document.querySelectorAll('.faq-question').forEach(button => {
+                button.addEventListener('click', function() {
+                    setTimeout(() => {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }, 100);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

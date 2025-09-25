@@ -1,0 +1,90 @@
+{
+    "name": "ArseneLab.xyz - Student GPA Calculator",
+    "short_name": "GPA Calculator",
+    "description": "Free GPA calculator and educational tools for students. Calculate your GPA instantly with multiple subjects and credit units.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4facfe",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": ["education", "productivity", "utilities"],
+    "icons": [
+        {
+            "src": "/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/images/icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/images/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/images/screenshot-desktop.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "GPA Calculator on Desktop"
+        },
+        {
+            "src": "/images/screenshot-mobile.png",
+            "sizes": "390x844",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "GPA Calculator on Mobile"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Calculate GPA",
+            "short_name": "GPA Calc",
+            "description": "Open the GPA calculator",
+            "url": "/#calculator",
+            "icons": [
+                {
+                    "src": "/images/shortcut-gpa.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Study Tips",
+            "short_name": "Blog",
+            "description": "Read study tips and academic resources",
+            "url": "/#blog",
+            "icons": [
+                {
+                    "src": "/images/shortcut-blog.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false
+}

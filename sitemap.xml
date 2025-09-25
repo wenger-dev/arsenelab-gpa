@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://arsenelab.xyz/</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://arsenelab.xyz/images/gpa-calculator-preview.jpg</image:loc>
+      <image:title>Rwanda GPA Calculator - Free Student Grade Calculator</image:title>
+      <image:caption>Calculate your GPA instantly with our free, easy-to-use Rwanda GPA Calculator</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://arsenelab.xyz/privacy-policy.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://arsenelab.xyz/terms-of-service.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://arsenelab.xyz/contact.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://arsenelab.xyz/blog/effective-study-methods.html</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://arsenelab.xyz/images/study-methods-preview.jpg</image:loc>
+      <image:title>10 Effective Study Methods That Actually Work</image:title>
+      <image:caption>Discover proven study techniques that can help you retain information better</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://arsenelab.xyz/blog/time-management-students.html</loc>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://arsenelab.xyz/images/time-management-preview.jpg</image:loc>
+      <image:title>Time Management Tips for Students</image:title>
+      <image:caption>Learn how to balance your studies, social life, and personal time</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://arsenelab.xyz/blog/improve-gpa.html</loc>
+    <lastmod>2024-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://arsenelab.xyz/images/gpa-improvement-preview.jpg</image:loc>
+      <image:title>How to Improve Your GPA: A Complete Guide</image:title>
+      <image:caption>Practical strategies and actionable tips to boost your GPA</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://arsenelab.xyz/blog/exam-preparation-strategies.html</loc>
+    <lastmod>2024-11-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://arsenelab.xyz/images/exam-prep-preview.jpg</image:loc>
+      <image:title>Exam Preparation Strategies That Work</image:title>
+      <image:caption>Master the art of exam preparation with proven strategies</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://arsenelab.xyz/blog/manage-study-stress.html</loc>
+    <lastmod>2024-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://arsenelab.xyz/images/study-stress-preview.jpg</image:loc>
+      <image:title>How to Manage Study Stress and Anxiety</image:title>
+      <image:caption>Essential tips for maintaining mental health while pursuing academic goals</image:caption>
+    </image:image>
+  </url>
+  
+  <url>
+    <loc>https://arsenelab.xyz/blog/choosing-major.html</loc>
+    <lastmod>2024-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://arsenelab.xyz/images/choosing-major-preview.jpg</image:loc>
+      <image:title>How to Choose the Right Major for Your Career</image:title>
+      <image:caption>Navigate the important decision of selecting a major</image:caption>
+    </image:image>
+  </url>
+  
+</urlset>
